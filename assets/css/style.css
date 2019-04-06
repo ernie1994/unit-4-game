@@ -1,0 +1,75 @@
+
+
+body {
+    background-image: url("/assets/images/Star_Wars_Land_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
+h2, h4, h6 {
+    font-family: 'Cuprum', sans-serif;
+}
+
+h2 {
+    display: block;
+    clear: both;
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+h4, h6 {
+    text-align: center;
+}
+
+button {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.character {
+    background-color: white;
+    border: 3px solid green;
+    float: left;
+    margin-left: 20px;
+}
+
+.enemy {
+    background-color: red;
+    border: 3px solid black;
+    float: left;
+    margin-left: 20px;
+}
+
+.defender {
+    background-color: black;
+    border: 3px solid white;
+    float: left;
+    margin-left: 20px;
+    color: white;
+}
+
+#title {
+    text-align: right;
+    padding-right: 70px;
+    margin-top: 30px;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 30px;
+}
+
+img {
+    width: 125px;
+    height: 80px;
+}
+
+#yourCharacter, #defender {
+    height: 135px;
+}
+
+#subtitles {
+    text-align: left;
+    margin-left: 20px;
+    color: white;
+}
