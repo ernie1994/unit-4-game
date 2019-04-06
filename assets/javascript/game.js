@@ -63,8 +63,6 @@ $(document).ready(function () {
     }
 
     function setUpElements() {
-        $("body").css("background-image", "url('/assets/images/Tatooine.jpg')");
-
         var yourTitle = $("<h2>");
         yourTitle.text("Your Character");
         $("body").append(yourTitle);
