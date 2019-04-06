@@ -4,30 +4,30 @@ $(document).ready(function () {
         {
             name: "Obi-Wan Kenobi",
             imageName: "Obi-Wan",
-            healthPoints: 160,
-            attackPower: 40,
-            counterAttackPower: 34
+            healthPoints: 161,
+            attackPower: 12,
+            counterAttackPower: 11
         },
         {
             name: "Luke Skywalker",
             imageName: "Luke_Skywalker",
-            healthPoints: 10,
-            attackPower: 56,
+            healthPoints: 150,
+            attackPower: 15,
             counterAttackPower: 20
         },
         {
             name: "Darth Maul",
             imageName: "darth_maul",
-            healthPoints: 100,
-            attackPower: 25,
+            healthPoints: 130,
+            attackPower: 16,
             counterAttackPower: 12
         },
         {
             name: "Darth Sidious",
             imageName: "Darth_Sidious",
             healthPoints: 211,
-            attackPower: 65,
-            counterAttackPower: 55
+            attackPower: 17,
+            counterAttackPower: 20
         },
     ];
 
@@ -99,8 +99,6 @@ $(document).ready(function () {
         var defenderSubtitles = $("<h6>");
         defenderSubtitles.attr("id", "subtitles");
         $("body").append(defenderSubtitles);
-
-
     }
 
     function setUpPage() {
@@ -169,8 +167,10 @@ $(document).ready(function () {
             return;
         }
 
+        player.numAttacks++;
+
         var yourDamage = defender.counterAttackPower;
-        var defendersDamage = player.attackPower;
+        var defendersDamage = player.attackPower * player.numAttacks;
 
         defender.healthPoints -= defendersDamage;
         player.healthPoints -= yourDamage;
@@ -178,13 +178,11 @@ $(document).ready(function () {
         $(".defender").children("h6").text(defender.healthPoints);
         $(".character").children("h6").text(player.healthPoints);
 
-        var firstLine = "You attacked " + defender.name + " for " + player.attackPower + " damage";
+        var firstLine = "You attacked " + defender.name + " for " + defendersDamage + " damage";
         var secondLine = defender.name + " attacked you back for " + defender.counterAttackPower + " damage";
 
         $("#subtitles").html(firstLine + "<br>" + secondLine);
 
-        player.numAttacks++;
-        player.attackPower += player.numAttacks * 15;
 
         if (defender.healthPoints <= 0) {
             var sub = "You have defeated " + defender.name + ".  You can choose to fight another enemy.";
