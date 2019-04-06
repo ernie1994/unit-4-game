@@ -52,7 +52,7 @@ $(document).ready(function () {
             charDiv.attr("class", "character");
             charDiv.attr("id", character.name);
             var name = "<h4>" + character.name + "</h4>";
-            var img = "<img src='/assets/images/" + character.imageName + ".jpg'>";
+            var img = "<img src='assets/images/" + character.imageName + ".jpg'>";
             var health = "<h6>" + character.healthPoints + "</h6>";
             charDiv.append(name);
             charDiv.append(img);
